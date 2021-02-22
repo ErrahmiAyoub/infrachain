@@ -1,0 +1,102 @@
+[
+  {
+    "Id": "1",
+    "Nom": "Darif",
+    "Prenom": "Elmehdi",
+    "Email": "darifmehdi@gmail.com",
+    "Tele": "0658181469",
+    "CIN": "W123456",
+    "CNE": "F123456871",
+    "Filiere": "GL"
+  },
+  {
+    "Id": "2",
+    "Nom": "Errahmi",
+    "Prenom": "Ayoub",
+    "Email": "errahmiayoub@gmail.com",
+    "Tele": "0654635825",
+    "CIN": "W245689",
+    "CNE": "F123542635",
+    "Filiere": "GL"
+  },
+  {
+    "Id": "3",
+    "Nom": "El Abbassi",
+    "Prenom": "Badr",
+    "Email": "abassibadr@gmail.com",
+    "Tele": "0625849535",
+    "CIN": "W245254",
+    "CNE": "F125622635",
+    "Filiere": "GL"
+  },
+  {
+    "Id": "4",
+    "Nom": "Nacer",
+    "Prenom": "Taha",
+    "Email": "tahanacer@gmail.com",
+    "Tele": "0654645215",
+    "CIN": "W2454578",
+    "CNE": "F123524536",
+    "Filiere": "GL"
+  },
+  {
+    "Id": "5",
+    "Nom": "Houssaini",
+    "Prenom": "Mouad",
+    "Email": "mohoussaini@gmail.com",
+    "Tele": "0665894525",
+    "CIN": "W2564254",
+    "CNE": "F125675635",
+    "Filiere": "GL"
+  },
+  {
+    "Id": "6",
+    "Nom": "Benmoussa",
+    "Prenom": "Tarik",
+    "Email": "bentarik@gmail.com",
+    "Tele": "0657855825",
+    "CIN": "BH45689",
+    "CNE": "B123542635",
+    "Filiere": "BI"
+  },
+  {
+    "Id": "7",
+    "Nom": "Kasraoui",
+    "Prenom": "Issam",
+    "Email": "ksrtaha@gmail.com",
+    "Tele": "0621589535",
+    "CIN": "XR45254",
+    "CNE": "F125625435",
+    "Filiere": "SSI"
+  },
+  {
+    "Id": "8",
+    "Nom": "Taibi",
+    "Prenom": "Houssam",
+    "Email": "houssamtaibi@gmail.com",
+    "Tele": "0652536215",
+    "CIN": "XY45578",
+    "CNE": "F123524536",
+    "Filiere": "ISEM"
+  },
+  {
+    "Id": "9",
+    "Nom": "Darif",
+    "Prenom": "Ahmed",
+    "Email": "ahmeddarif@gmail.com",
+    "Tele": "0665215425",
+    "CIN": "BH64254",
+    "CNE": "F123259865",
+    "Filiere": "BI"
+  },
+  {
+    "Id": "10",
+    "Nom": "Tarik",
+    "Prenom": "Yassine",
+    "Email": "yasstarik@gmail.com",
+    "Tele": "0758693524",
+    "CIN": "BH21546",
+    "CNE": "B136331101",
+    "Filiere": "SSI"
+  }
+]
