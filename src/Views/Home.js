@@ -42,6 +42,7 @@ const subtitle = [
 
 export default function Home() {
   const classes = useStyles();
+
   const listItems = [{ href: "/verification", text: "Verifier" }];
   return (
     <React.Fragment>

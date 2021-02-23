@@ -11,10 +11,9 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "0",
     right: "0",
-    zIndex: "10",
+    zIndex: "9",
     display: "flex",
     alignItems: "flex-start",
-    maxWidth: "30vw",
   },
   explain: {
     padding: "16px",

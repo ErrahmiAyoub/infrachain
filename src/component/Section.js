@@ -11,6 +11,10 @@ export let useStyles = makeStyles((theme) => ({
     minHeight: "85vh",
     padding: "60px",
     position: "relative",
+    [theme.breakpoints.down("md")]: {
+      padding: "0 8px",
+      margin: 0,
+    },
   },
   dark: {
     "& * ": {

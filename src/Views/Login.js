@@ -96,7 +96,7 @@ export default function SignIn() {
             setSubmitting(false);
             // signIn(values.email, values.password, setError);
             if (
-              values.email === "ensias@gmail.com" ||
+              values.email === "ensias@gmail.com" &&
               values.password === "azerty"
             ) {
               setError(false);

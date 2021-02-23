@@ -22,7 +22,9 @@ export default function SubSection({
       padding: theme.spacing(4),
       justifyContent: "flex-start",
       [theme.breakpoints.down("sm")]: {
-        margin: "32px 0",
+        margin: "16px 0",
+        minHeight: "auto",
+        alignItems: "center",
         order: order,
       },
     },
@@ -32,9 +34,8 @@ export default function SubSection({
       justifyContent: "center",
       flexDirection: "column",
       padding: "0",
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.down("sm")]: {
         minHeight: "auto",
-        alignItems: "center",
       },
     },
     video: {
