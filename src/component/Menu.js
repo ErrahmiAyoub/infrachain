@@ -20,15 +20,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TypographyMenu({ list }) {
+export default function TypographyMenu({ list, icon, color }) {
   const classes = useStyles();
-
+  const col = color ? color : "#81c784";
   const listItems = list.map((obj, key) => {
     return (
       <li key={key} className={classes.item}>
         <ListItemIcon>
           {" "}
-          <CheckCircleIcon fontSize="small" style={{ color: "green" }} />
+          {icon ? (
+            icon
+          ) : (
+            <CheckCircleIcon fontSize="small" style={{ color: col }} />
+          )}
         </ListItemIcon>
         <Typography variant="inherit">{obj}</Typography>
       </li>

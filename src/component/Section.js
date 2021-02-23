@@ -39,16 +39,15 @@ export let useStyles = makeStyles((theme) => ({
     width: "100vw",
     height: "100vh",
     zIndex: "-1",
-    background: "rgb(0,22,39,.4)",
+    background: "rgb(255,255,255,.2)",
   },
 }));
 
 export default function Section(props) {
-  const { main, children, dark, back, video } = props;
+  const { children, dark, back, video } = props;
   const classes = useStyles();
   const root = classNames({
     [classes.root]: true,
-    [classes.main]: main,
     [classes.dark]: dark,
   });
 

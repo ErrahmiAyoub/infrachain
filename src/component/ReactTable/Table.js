@@ -28,7 +28,12 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
-function Table({ columns: userColumns, data, renderRowSubComponent }) {
+function Table({
+  columns: userColumns,
+  data,
+  renderRowSubComponent,
+  children,
+}) {
   const filterTypes = React.useMemo(
     () => ({
       // Add a new fuzzyTextFilterFn filter type.
@@ -106,9 +111,16 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
   }, [preGlobalFilteredRows]);
 
   return (
-    <Paper style={{ padding: "2em", position: "relative", margin: "16px" }}>
+    <Paper
+      style={{
+        padding: "2em",
+        position: "relative",
+        margin: "16px",
+        paddingTop: children ? "50px" : "2em",
+      }}
+    >
       {/* <span style={{ marginRight: "10px" }}>Filter by category : </span> */}
-
+      {children}
       <GlobalFilter
         options={categoryFilter}
         globalFilter={state.globalFilter}
@@ -121,10 +133,7 @@ function Table({ columns: userColumns, data, renderRowSubComponent }) {
             {headerGroups.map((headerGroup) => (
               <TableRow {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <TableCell
-                    {...column.getHeaderProps()}
-                    style={{ background: "#F0F8FF" }}
-                  >
+                  <TableCell {...column.getHeaderProps()}>
                     <div
                       {...column.getSortByToggleProps()}
                       style={{

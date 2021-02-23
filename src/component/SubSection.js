@@ -13,6 +13,7 @@ export default function SubSection({
   title,
   subtitle,
   order,
+  center,
   ...rest
 }) {
   const useStyles = makeStyles((theme) => ({
@@ -21,8 +22,19 @@ export default function SubSection({
       padding: theme.spacing(4),
       justifyContent: "flex-start",
       [theme.breakpoints.down("sm")]: {
+        margin: "32px 0",
         order: order,
-        padding: "16px 0",
+      },
+    },
+    center: {
+      minHeight: "65vh",
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      padding: "0",
+      [theme.breakpoints.down("md")]: {
+        minHeight: "auto",
+        alignItems: "center",
       },
     },
     video: {
@@ -41,6 +53,7 @@ export default function SubSection({
   const classes = useStyles();
   const root = classNames({
     [classes.root]: true,
+    [classes.center]: center,
   });
   const content = classNames({
     [classes.video]: video,

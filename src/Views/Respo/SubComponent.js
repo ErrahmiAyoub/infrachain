@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import { Typography } from "@material-ui/core";
 
 // import video from "../assets/img/blockchain.mp4";
 import Button from "../../component/Button";
-import Dialog from "../../component/FormDialog";
+import SubSection from "../../component/SubSection";
+import Alert from "../../component/Alert";
+import InlineInput from "../../component/InlineInputs";
 import SnackBar from "../../component/SnackBar";
+import Dialog from "../../component/FormDialog";
 
 import PublishIcon from "@material-ui/icons/Publish";
-import MailIcon from "@material-ui/icons/MailOutline";
-import { Typography } from "@material-ui/core";
+import SendIcon from "@material-ui/icons/Send";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,93 +45,113 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
   },
+  title: {
+    fontSize: "2em",
+    fontWeight: "500",
+
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
+  },
 }));
 
-export default function Verification() {
+export default function SubComponent({ row }) {
   const classes = useStyles();
-  const [fileName, setFileName] = useState(null);
+  const [fileName, setFileName] = useState("");
   const [message, setMessage] = useState(null);
   const [open, setOpen] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
+  const [success, setSuccess] = useState(false);
+  const [echec, setEchec] = useState(false);
+
+  let msgSuccess = `Le document ${fileName} est cértifier. Un mail est envoyé à ${row.original.Email}`;
 
   const handleDialogAction = () => {
     setSuccess(true);
+    setEchec(false);
+    setFileName("");
   };
 
   function showname() {
     var name = document.getElementById("fileInput");
     setFileName(name.files.item(0).name);
+    if (!fileName) setEchec(false);
   }
   const handleClick = () => {
-    setOpen(true);
+    if (!fileName) {
+      setEchec(true);
+      setMessage("Vous devez choisir un document pour le cértifier");
+    } else setOpen(true);
   };
 
   return (
-    <Container
-      maxWidth="md"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        textAlign: "center",
-      }}
-    >
+    <Container maxWidth="md">
       {open && (
         <Dialog
           title="Validation"
-          content="Voulez-vous valider l'action"
+          content="Vérifier les informations avant de valider"
           open={open}
           setOpen={setOpen}
           handleAction={handleDialogAction}
-        />
-      )}
-      {success && <SnackBar show={success} type="success" message="Succès" />}
-      <Typography variant="h5">
-        Enregistrer le document dans le blockchain et envoyé un email au
-        étudiant
-      </Typography>
-      <div className={classes.inputDiv}>
-        <TextField
-          variant="outlined"
-          placeholder="Télécharger votre fichier"
-          fullWidth
-          size="small"
-          value={fileName}
-          disabled
-        />
-
-        <input
-          accept="application/pdf"
-          className={classes.input}
-          id="fileInput"
-          multiple
-          hidden
-          type="file"
-          onChange={showname}
-        />
-        <label htmlFor="fileInput">
-          <Button
-            className={classes.margin}
-            variant="contained"
-            component="span"
-            color="rgb(4,119,194)"
-          >
-            <PublishIcon size="large" />
-          </Button>
-        </label>
-        <Button
-          className={classes.margin}
-          style={{ padding: "8px 32px" }}
-          variant="contained"
-          color="#008000"
-          onClick={handleClick}
         >
-          <MailIcon />
-        </Button>
-      </div>
-      <div className={classes.margin}>
-        <Typography> {message} </Typography>
-      </div>
+          {" "}
+          <Typography variant="overline" display="block" gutterBottom>
+            Cértifiez le document{" "}
+            <span style={{ fontWeight: "bold" }}>{fileName}</span>{" "}
+          </Typography>
+          <Typography variant="overline" display="block" gutterBottom>
+            Envoyez le document à{" "}
+            <span style={{ fontWeight: "bold" }}>{row.original.Email}</span>{" "}
+          </Typography>
+        </Dialog>
+      )}
+      {success && (
+        <SnackBar show={success} type="success" message={msgSuccess} />
+      )}
+
+      <SubSection>
+        <Typography align="left" className={classes.title}>
+          Cértifier et Envoyer{" "}
+          <span style={{ color: "#4287f5" }}>un document</span>
+        </Typography>
+
+        <InlineInput>
+          <TextField
+            variant="outlined"
+            placeholder="Vérifier un document"
+            fullWidth
+            size="small"
+            value={fileName}
+            disabled
+          />
+          <input
+            accept="application/pdf"
+            id="fileInput"
+            multiple
+            hidden
+            type="file"
+            onChange={showname}
+          />
+          <label htmlFor="fileInput">
+            <Button
+              component="span"
+              color="#1651a2"
+              className={classes.inputBtn}
+            >
+              <PublishIcon />
+            </Button>
+          </label>
+          <Button
+            color="#4cb69f"
+            onClick={handleClick}
+            className={classes.inputBtn}
+          >
+            <SendIcon />
+          </Button>
+        </InlineInput>
+        <div className={classes.margin}>
+          {echec && <Alert type={"error"} message={message} />}
+        </div>
+      </SubSection>
     </Container>
   );
 }

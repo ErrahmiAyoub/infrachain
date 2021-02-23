@@ -11,8 +11,16 @@ import Navbar from "../../component/Navbar";
 import Button from "../../component/Button";
 import { logout } from "../../routes/utils";
 import { Link } from "react-router-dom";
+import Info from "../../component/Info";
 
 function Home() {
+  const list = [
+    "Séléctionez l'étudiant et cliquez sur l'icon '+' ",
+    "Ajoutez un document depuis votre ordinateur",
+    "Cliquez sur le bouton envoyer pour cérftifier le document",
+    "Le lien va être envoyer automatiquement au email de l'étudiant pour qu'il puisse le télécharger",
+  ];
+
   const [loading, setLoading] = React.useState(true);
   const [studentList, setStudentList] = useState(null);
   const [error, setError] = React.useState(false);
@@ -38,12 +46,18 @@ function Home() {
           </Button>
         </Link>
       </Navbar>
+
       {!loading ? (
         <Table
           columns={columns}
           data={studentList}
           renderRowSubComponent={renderRowSubComponent}
-        />
+        >
+          <Info
+            titre="Comment cértifier et envoyer un document ?"
+            list={list}
+          />
+        </Table>
       ) : (
         !error && <ProgressBar />
       )}

@@ -35,7 +35,7 @@ export default function tableColumns() {
       accessor: (d) => d.Email,
     },
     {
-      Header: "Tele",
+      Header: "Telephone",
       accessor: (d) => d.Tele,
     },
     {

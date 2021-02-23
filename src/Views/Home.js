@@ -68,12 +68,15 @@ export default function Home() {
                   Certifier
                 </Button>
               </Link>
-              <Button
-                color="white"
-                style={{ color: "#1651a2", padding: "8px 32px" }}
-              >
-                Verifier
-              </Button>
+              <Link to="/verification">
+                <Button
+                  color="white"
+                  style={{ color: "#1651a2", padding: "8px 32px" }}
+                  variant="outlined"
+                >
+                  Verifier
+                </Button>
+              </Link>
             </div>
           </SubSection>
           <SubSection video={video} order={-1} />

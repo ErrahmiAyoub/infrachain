@@ -18,7 +18,11 @@ export default function CustomCardActions(props) {
   }));
   const classes = useStyles();
   return (
-    <Button className={classNames(classes.root, className)} {...rest}>
+    <Button
+      className={classNames(classes.root, className)}
+      variant="outlined"
+      {...rest}
+    >
       {children}
     </Button>
   );
