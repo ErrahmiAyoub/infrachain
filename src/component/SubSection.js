@@ -29,7 +29,7 @@ export default function SubSection({
       },
     },
     center: {
-      minHeight: "65vh",
+      minHeight: "50vh",
       display: "flex",
       justifyContent: "center",
       flexDirection: "column",
