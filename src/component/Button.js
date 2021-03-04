@@ -5,13 +5,14 @@ import classNames from "classnames";
 
 export default function CustomCardActions(props) {
   const { children, color, className, ...rest } = props;
+  const backColor = color ? color : "#1651a2";
   const useStyles = makeStyles((theme) => ({
     root: {
-      background: color,
+      background: backColor,
       color: "white",
       padding: ".5em 1em",
       "&:hover": {
-        background: color,
+        background: backColor,
         filter: "brightness(130%)",
       },
     },

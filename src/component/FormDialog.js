@@ -51,7 +51,7 @@ export default function FormDialog(props) {
           <IconButton
             onClick={handleClose}
             aria-label="Cancel"
-            size="large"
+           
             color="secondary"
           >
             <CancelIcon fontSize="large" />
@@ -62,7 +62,7 @@ export default function FormDialog(props) {
               handleAction();
               handleClose();
             }}
-            size="large"
+            
             style={{ color: "#00695f" }}
           >
             <CheckCircleIcon fontSize="large" />

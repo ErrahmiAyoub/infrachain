@@ -49,23 +49,16 @@ export default function Home() {
       <Navbar listItems={listItems}>
         {" "}
         <Link to="/login">
-          <Button color="#1651a2">Certifer</Button>
+          <Button>Certifer</Button>
         </Link>
       </Navbar>
       <CssBaseline />
       <Container className={classes.root}>
         <Section>
-          <SubSection
-            main
-            title="Signer, Certifier et Vérifier"
-            subtitle={subtitle}
-          >
+          <SubSection title="Signer, Certifier et Vérifier" subtitle={subtitle}>
             <div style={{ width: "100%", display: "flex" }}>
               <Link to="/login">
-                <Button
-                  color="#1651a2"
-                  style={{ marginRight: "32px", padding: "8px 32px" }}
-                >
+                <Button style={{ marginRight: "32px", padding: "8px 32px" }}>
                   Certifier
                 </Button>
               </Link>
@@ -138,15 +131,8 @@ export default function Home() {
         </Section>
 
         <Section back dark>
-          <SubSection
-            main
-            title="Nous vous aidons à mettre en œuvre la seule solution de certification et de vérification dont vous aurez besoin"
-          ></SubSection>
-          <SubSection
-            main
-            title="Certification"
-            subtitle={subtitle}
-          ></SubSection>
+          <SubSection title="Nous vous aidons à mettre en œuvre la seule solution de certification et de vérification dont vous aurez besoin"></SubSection>
+          <SubSection title="Certification" subtitle={subtitle}></SubSection>
         </Section>
       </Container>
       <Footer text="Copyright © ENSIAS" />

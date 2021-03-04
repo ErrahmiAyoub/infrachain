@@ -21,12 +21,7 @@ function App() {
       <Router>
         <Switch>
           <PublicRoute restricted component={Home} path="/" exact />
-          <PublicRoute
-            restricted
-            component={Verification}
-            path="/verification"
-            exact
-          />
+          <PublicRoute component={Verification} path="/verification" exact />
           <PublicRoute restricted component={Login} path="/login" exact />
           <PrivateRoute component={RespoHome} path="/home" exact />
           <Route path="/404" component={Error404} />

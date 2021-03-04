@@ -16,7 +16,6 @@ import { object, string } from "yup";
 import { useHistory } from "react-router-dom";
 
 import logo from "../assets/img/logoH.png";
-import { FlashOnRounded } from "@material-ui/icons";
 
 function Copyright() {
   return (

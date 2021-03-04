@@ -35,14 +35,12 @@ function Home() {
     ({ row }) => <SubComponent row={row} />,
     []
   );
-
+  const listItems = [{ href: "/verification", text: "Verifier" }];
   return (
     <>
-      <Navbar>
+      <Navbar listItems={listItems}>
         <Link to="/">
-          <Button color="#1651a2" onClick={logout}>
-            Deconnexion
-          </Button>
+          <Button onClick={logout}>Deconnexion</Button>
         </Link>
       </Navbar>
 

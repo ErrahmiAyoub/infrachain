@@ -48,7 +48,7 @@ export let useStyles = makeStyles((theme) => ({
 }));
 
 export default function Section(props) {
-  const { children, dark, back, video, ...rest } = props;
+  const { children, dark, back, video } = props;
   const classes = useStyles();
   const root = classNames({
     [classes.root]: true,
@@ -57,7 +57,7 @@ export default function Section(props) {
 
   const background = dark ? "#0c3475" : "#F4F1EE";
   return (
-    <div className={root} {...rest}>
+    <div className={root}>
       {back && (
         <div className={classes.back} style={{ background: background }}>
           {""}
