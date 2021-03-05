@@ -1,4 +1,4 @@
-import React, { useState, Component, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -180,11 +180,9 @@ export default function SubComponent({ row }) {
     let date = newDate.getDate();
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
-    return date < 10
-      ? "0" + date
-      : date + "/" + month < 10
-      ? "0" + month
-      : month + "/" + year;
+    date = date < 10 ? "0" + date : date;
+    month = month < 10 ? "0" + month : month;
+    return date + "/" + month + "/" + year;
   }
   const sendDoc2BC = async (hash) => {
     let dateCreation = getCurrentDate();
